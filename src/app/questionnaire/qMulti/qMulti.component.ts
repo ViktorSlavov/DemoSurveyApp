@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { QBase } from '../qBase/qBase';
 import { IgxComboComponent } from 'igniteui-angular';
+import { QViewComponent } from '../questionnaire-view/qView.component';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -11,6 +12,10 @@ import { IgxComboComponent } from 'igniteui-angular';
 })
 export class QMultiComponent extends QBase {
     private _value = null;
+
+    constructor(public questionnaire: QViewComponent) {
+        super();
+    }
 
     @ViewChild(IgxComboComponent, { read: IgxComboComponent })
     public combo: IgxComboComponent;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { QuestionService } from './questions.service';
 
 @Component({
@@ -8,6 +8,9 @@ import { QuestionService } from './questions.service';
 })
 export class SurveyComponent implements OnInit {
     public data: any;
+
+    @ViewChild('errorIcon', { read: TemplateRef })
+    public errorIcon: TemplateRef<any>;
 
     public errorMsgs: { multi: string, single: string } = {
         multi: 'Please select at least one (1) answer!',

@@ -1,8 +1,5 @@
 <div class="single__wrapper">
-    <p class="single__text">
-        <ng-content select="[qText]">
-        </ng-content>
-    </p>
+    <p class="single__text" qText>{{ question.text }}</p>
     <div class="single__input">
         <igx-input-group [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">
             <input igxInput readonly [value]="dropDown?.selectedItem?.value.text">
@@ -17,5 +14,6 @@
     </div>
     <q-validator>
         <ng-content select="[qError]" ngProjectAs="[qError]"></ng-content>
+        <ng-container *ngTemplateOutlet="questionnaire.errorIcon" ngProjectAs='[qErrorIcon]'></ng-container>
     </q-validator>
 </div>

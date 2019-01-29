@@ -5,16 +5,14 @@
     <div class='questionnaire__body'>
         <ng-container *ngFor="let question of questions">
             <q-single *ngIf="question.type === 'single'" [question]="question">
-                <p qText>{{ question.text }}</p>
-                <p qError>{{ error.multi }}</p>
+                <p qError>{{ error.single }}</p>
             </q-single>
             <q-multi *ngIf="question.type === 'multi'" [question]="question">
-                <p qText>{{ question.text }}</p>
                 <p qError>{{ error.multi }}</p>
             </q-multi>
         </ng-container>
     </div>
     <div class='questionnaire__submit'>
-        <button igxButton (click)="submitResults()">Submit</button>
+        <button igxButton [disabled]="!valid" (click)="submitResults()">Submit</button>
     </div>
 </div>

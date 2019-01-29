@@ -1,4 +1,4 @@
-import { Component, ContentChild } from '@angular/core';
+import { Component, ContentChild, HostListener, ElementRef, TemplateRef } from '@angular/core';
 import { QBase } from '../qBase/qBase';
 import { QErrorIconDirective } from '../directives/qErrorIcon.directive';
 
@@ -9,8 +9,21 @@ import { QErrorIconDirective } from '../directives/qErrorIcon.directive';
     styleUrls: [`./qValidator.component.scss`]
 })
 export class QValidatorComponent {
-    constructor(public control: QBase) {}
+    private _errorIcon = null;
+    constructor(public control: QBase, public elementRef: ElementRef) {}
 
-    @ContentChild(QErrorIconDirective, { read: QErrorIconDirective })
-    public errorIcon: QErrorIconDirective;
+    @ContentChild(TemplateRef, { read: TemplateRef })
+    public get errorIcon(): TemplateRef<any> {
+        return this._errorIcon;
+    }
+
+    public set errorIcon(val: TemplateRef<any>) {
+        this._errorIcon = val;
+    }
+
+    @HostListener('click')
+    handleClick() {
+        // tslint:disable-next-line:no-debugger
+        debugger;
+    }
 }

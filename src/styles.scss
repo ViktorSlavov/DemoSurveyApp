@@ -28,14 +28,8 @@ html, body {
 
 .validator__error > .error__icon {
   width: 20%;
-  margin: auto;
   text-align: center;
   font-weight: 400;
-}
-
-.single__text > .question__text, .multi__text > .question__text {
-  font-weight: 600;
-  font-size: 1rem;
 }
 
 .question__text, q-validator {
