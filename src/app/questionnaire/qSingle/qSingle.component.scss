@@ -1,0 +1,17 @@
+.single__text, .single__input {
+    width: 100%;
+}
+
+.single__options-list {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.single__wrapper {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}

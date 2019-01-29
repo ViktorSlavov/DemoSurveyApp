@@ -1,0 +1,5 @@
+<div *ngIf="control.value === null" class="validator__error">
+    <ng-content select="[qError]"></ng-content>
+    <ng-content *ngIf="errorIcon" select="[qErrorIcon]"></ng-content>
+    <igx-icon *ngIf="!errorIcon" qErrorIcon>error</igx-icon>
+</div>

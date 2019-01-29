@@ -16,3 +16,32 @@ html, body {
 .content p {
   margin: 15px;
 }
+
+.validator__error > .error__icon, .validator__error > .error__text {
+  color: #da4843;
+  line-height: 24px;
+}
+
+.validator__error > .error__text {
+  font-weight: 600;
+}
+
+.validator__error > .error__icon {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+  font-weight: 400;
+}
+
+.single__text > .question__text, .multi__text > .question__text {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.question__text, q-validator {
+  width: 100%;
+}
+q-validator, q-multi, q-single {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+<div class="single__wrapper">
+    <p class="single__text">
+        <ng-content select="[qText]">
+        </ng-content>
+    </p>
+    <div class="single__input">
+        <igx-input-group [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">
+            <input igxInput readonly [value]="dropDown?.selectedItem?.value.text">
+        </igx-input-group>
+
+        <igx-drop-down #dropdown class='single__options-list' (onSelection)="handleSelection($event)">
+            <igx-drop-down-item *ngFor="let answer of question.answers" [value]="answer">
+                {{ answer.text }}
+            </igx-drop-down-item>
+        </igx-drop-down>
+
+    </div>
+    <q-validator>
+        <ng-content select="[qError]" ngProjectAs="[qError]"></ng-content>
+    </q-validator>
+</div>
