@@ -1,4 +1,4 @@
-import { Question, QUESTION_TYPES } from '../service/interfaces';
+import { Question, QUESTION_TYPES } from '../interfaces/interfaces';
 
 export const questions: Question[] = [
     {

@@ -1,14 +1,15 @@
-import { Component, Input, ViewChildren, QueryList, Output, EventEmitter, TemplateRef } from '@angular/core';
-import { Question } from '../../service/interfaces';
-import { QBase } from '../qBase/qBase';
+import { Component, Input, ViewChildren, QueryList, Output, EventEmitter, TemplateRef, HostBinding, ViewChild } from '@angular/core';
+import { Question } from '../../interfaces/interfaces';
+import { QBase } from '../q-base/qBase';
+import { QErrorIconDirective } from '../directives/qErrorIcon.directive';
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: `q-questionnaire`,
-    templateUrl: `./qView.component.html`,
-    styleUrls: [`./qView.component.scss`]
+    templateUrl: `./q-questionnaire.component.html`,
+    styleUrls: [`./q-questionnaire.component.scss`]
 })
-export class QViewComponent {
+export class QQuestionnaireComponent {
     /**
      * Emitted when the questionnaire is submitted
      */
@@ -32,7 +33,8 @@ export class QViewComponent {
      * If passed, overwrites the default error icon
      */
     @Input()
-    public errorIcon: TemplateRef<any> = null;
+    @ViewChild(QErrorIconDirective, { read: QErrorIconDirective })
+    public errorIcon: QErrorIconDirective = null;
 
     @ViewChildren(QBase, { read: QBase })
     private qControls: QueryList<QBase>;

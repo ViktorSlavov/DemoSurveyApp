@@ -1,19 +1,19 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { QBase } from '../qBase/qBase';
+import { QBase } from '../q-base/qBase';
 import { IgxComboComponent } from 'igniteui-angular';
-import { QViewComponent } from '../questionnaire-view/qView.component';
+import { QQuestionnaireComponent } from '../q-questionnaire/q-questionnaire.component';
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'q-multi',
-    templateUrl: './qMulti.component.html',
-    styleUrls: [`./qMulti.component.scss`],
+    templateUrl: './q-multi.component.html',
+    styleUrls: [`./q-multi.component.scss`],
     providers: [{ provide: QBase, useExisting: QMultiComponent }]
 })
 export class QMultiComponent extends QBase {
     private _value = null;
 
-    constructor(public questionnaire: QViewComponent) {
+    constructor(public questionnaire: QQuestionnaireComponent) {
         super();
     }
 

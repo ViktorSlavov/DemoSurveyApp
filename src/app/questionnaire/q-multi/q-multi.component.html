@@ -1,11 +1,11 @@
 <div class="multi__wrapper">
     <p class="multi__text">{{ question.text }}</p>
     <div class="multi__input">
-        <igx-combo [data]="question.answers" [valueKey]="'value'" [itemsMaxHeight]="160" [displayKey]="'text'"
+        <igx-combo [data]="question.answers" [valueKey]="'value'" [itemsMaxHeight]="224" [displayKey]="'text'"
             [groupKey]="'group'" [(ngModel)]="value"></igx-combo>
     </div>
     <q-validator>
         <ng-content select="[qError]" ngProjectAs="[qError]"></ng-content>
-        <ng-container *ngTemplateOutlet="questionnaire.errorIcon" ngProjectAs='[qErrorIcon]'></ng-container>
+        <ng-content select="[qErrorIcon]" ngProjectAs='[qErrorIcon]'></ng-content>
     </q-validator>
 </div>

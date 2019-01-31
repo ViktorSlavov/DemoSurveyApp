@@ -1,5 +1,5 @@
 import { Input } from '@angular/core';
-import { Question } from 'src/app/service/interfaces';
+import { Question } from 'src/app/interfaces/interfaces';
 
 export abstract class QBase {
     /**

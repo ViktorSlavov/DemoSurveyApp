@@ -13,8 +13,8 @@ export class SurveyComponent implements OnInit {
     public errorIcon: TemplateRef<any>;
 
     public errorMsgs: { multi: string, single: string } = {
-        multi: 'Please select at least one (1) answer!',
-        single: 'Please select an answer!'
+        multi: 'Bitte wählen Sie wenigstens eine (1) Antwort',
+        single: 'Bitte wählen Sie eine (1) Antwort'
     };
     constructor(private questionService: QuestionService) {
         this.data = this.questionService.questions;
